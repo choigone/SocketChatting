@@ -1,11 +1,4 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<unistd.h>
-#include<string.h>
-#include<arpa/inet.h>
-#include<sys/socket.h>
-#include<pthread.h>
-#include<time.h>
+#include "header.h"
 
 #define BUF_SIZE 100
 #define NORMAL_SIZE 20

@@ -81,6 +81,9 @@
 		<Unit filename="/Users/gounchoi/Desktop/동대생최고운/3학년1학기/운영체제/SocketChatting/Socket_c/client.c">
 			<Option target="Socket_c"/>
 		</Unit>
+		<Unit filename="/Users/gounchoi/Desktop/동대생최고운/3학년1학기/운영체제/SocketChatting/Socket_c/header.h">
+			<Option target="Socket_c"/>
+		</Unit>
 		<Unit filename="/Users/gounchoi/Desktop/동대생최고운/3학년1학기/운영체제/SocketChatting/Socket_c/server.c">
 			<Option target="Socket_c"/>
 		</Unit>

@@ -1,19 +1,11 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<unistd.h>
-#include<string.h>
-#include<arpa/inet.h>
-#include<sys/socket.h>
-#include<netinet/in.h>
-#include<pthread.h>
-#include<time.h>
+#include "header.h"
 
 #define BUF_SIZE 100
 #define MAX_CLIENT 100
 
 void * handle_client(void *arg);
 void send_msg(char *msg, int len);
-void error_handling(char *msg);
+void handle_error(char *msg);
 void menu();
 
 
@@ -49,9 +41,9 @@ int main(int argc, char *argv[])
     server_address.sin_port=htons(atoi(argv[1]));
 
     if (bind(server_sock, (struct sockaddr*)&server_address, sizeof(server_address))==-1)
-        error_handling("bind() error");
+        handle_error("bind() error");
     if (listen(server_sock, 5)==-1)
-        error_handling("listen() error");
+        handle_error("listen() error");
 
     while(1){
         t=localtime(&timer);
@@ -104,7 +96,7 @@ void send_msg(char* msg, int len)
     pthread_mutex_unlock(&mutx);
 }
 
-void error_handling(char *msg)
+void handle_error(char *msg)
 {
     fputs(msg, stderr);
     fputc('\n', stderr);
